@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsBCCT" targetNamespace="http://tempuri.org/dsBCCT.xsd" xmlns:mstns="http://tempuri.org/dsBCCT.xsd" xmlns="http://tempuri.org/dsBCCT.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsBCCT" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="dsBCCT" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsBCCT">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtBCCT" msprop:Generator_RowEvHandlerName="dtBCCTRowChangeEventHandler" msprop:Generator_RowDeletedName="dtBCCTRowDeleted" msprop:Generator_RowDeletingName="dtBCCTRowDeleting" msprop:Generator_RowEvArgName="dtBCCTRowChangeEvent" msprop:Generator_TablePropName="dtBCCT" msprop:Generator_RowChangedName="dtBCCTRowChanged" msprop:Generator_UserTableName="dtBCCT" msprop:Generator_RowChangingName="dtBCCTRowChanging" msprop:Generator_RowClassName="dtBCCTRow" msprop:Generator_TableClassName="dtBCCTDataTable" msprop:Generator_TableVarName="tabledtBCCT">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaNV" msprop:Generator_ColumnPropNameInTable="MaNVColumn" msprop:Generator_ColumnPropNameInRow="MaNV" msprop:Generator_UserColumnName="MaNV" msprop:Generator_ColumnVarNameInTable="columnMaNV" type="xs:string" minOccurs="0" />
+              <xs:element name="HoTen" msprop:Generator_ColumnPropNameInTable="HoTenColumn" msprop:Generator_ColumnPropNameInRow="HoTen" msprop:Generator_UserColumnName="HoTen" msprop:Generator_ColumnVarNameInTable="columnHoTen" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay1" msprop:Generator_ColumnPropNameInTable="Ngay1Column" msprop:Generator_ColumnPropNameInRow="Ngay1" msprop:Generator_UserColumnName="Ngay1" msprop:Generator_ColumnVarNameInTable="columnNgay1" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay2" msprop:Generator_ColumnPropNameInTable="Ngay2Column" msprop:Generator_ColumnPropNameInRow="Ngay2" msprop:Generator_UserColumnName="Ngay2" msprop:Generator_ColumnVarNameInTable="columnNgay2" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay3" msprop:Generator_ColumnPropNameInTable="Ngay3Column" msprop:Generator_ColumnPropNameInRow="Ngay3" msprop:Generator_UserColumnName="Ngay3" msprop:Generator_ColumnVarNameInTable="columnNgay3" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay4" msprop:Generator_ColumnPropNameInTable="Ngay4Column" msprop:Generator_ColumnPropNameInRow="Ngay4" msprop:Generator_UserColumnName="Ngay4" msprop:Generator_ColumnVarNameInTable="columnNgay4" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay5" msprop:Generator_ColumnPropNameInTable="Ngay5Column" msprop:Generator_ColumnPropNameInRow="Ngay5" msprop:Generator_UserColumnName="Ngay5" msprop:Generator_ColumnVarNameInTable="columnNgay5" type="xs:string" minOccurs="0" />
+              <xs:element name="Thang" msprop:Generator_ColumnPropNameInTable="ThangColumn" msprop:Generator_ColumnPropNameInRow="Thang" msprop:Generator_UserColumnName="Thang" msprop:Generator_ColumnVarNameInTable="columnThang" type="xs:string" minOccurs="0" />
+              <xs:element name="Nam" msprop:Generator_UserColumnName="Nam" msprop:Generator_ColumnPropNameInTable="NamColumn" msprop:Generator_ColumnPropNameInRow="Nam" msprop:Generator_ColumnVarNameInTable="columnNam" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay6" msprop:Generator_ColumnPropNameInRow="Ngay6" msprop:Generator_ColumnPropNameInTable="Ngay6Column" msprop:Generator_ColumnVarNameInTable="columnNgay6" msprop:Generator_UserColumnName="Ngay6" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay7" msprop:Generator_ColumnPropNameInRow="Ngay7" msprop:Generator_ColumnPropNameInTable="Ngay7Column" msprop:Generator_ColumnVarNameInTable="columnNgay7" msprop:Generator_UserColumnName="Ngay7" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay8" msprop:Generator_ColumnPropNameInRow="Ngay8" msprop:Generator_ColumnPropNameInTable="Ngay8Column" msprop:Generator_ColumnVarNameInTable="columnNgay8" msprop:Generator_UserColumnName="Ngay8" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay9" msprop:Generator_ColumnPropNameInRow="Ngay9" msprop:Generator_ColumnPropNameInTable="Ngay9Column" msprop:Generator_ColumnVarNameInTable="columnNgay9" msprop:Generator_UserColumnName="Ngay9" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay10" msprop:Generator_ColumnPropNameInRow="Ngay10" msprop:Generator_ColumnPropNameInTable="Ngay10Column" msprop:Generator_ColumnVarNameInTable="columnNgay10" msprop:Generator_UserColumnName="Ngay10" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay11" msprop:Generator_ColumnPropNameInRow="Ngay11" msprop:Generator_ColumnPropNameInTable="Ngay11Column" msprop:Generator_ColumnVarNameInTable="columnNgay11" msprop:Generator_UserColumnName="Ngay11" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay12" msprop:Generator_ColumnPropNameInRow="Ngay12" msprop:Generator_ColumnPropNameInTable="Ngay12Column" msprop:Generator_ColumnVarNameInTable="columnNgay12" msprop:Generator_UserColumnName="Ngay12" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay13" msprop:Generator_ColumnPropNameInRow="Ngay13" msprop:Generator_ColumnPropNameInTable="Ngay13Column" msprop:Generator_ColumnVarNameInTable="columnNgay13" msprop:Generator_UserColumnName="Ngay13" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay14" msprop:Generator_ColumnPropNameInRow="Ngay14" msprop:Generator_ColumnPropNameInTable="Ngay14Column" msprop:Generator_ColumnVarNameInTable="columnNgay14" msprop:Generator_UserColumnName="Ngay14" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay15" msprop:Generator_ColumnPropNameInRow="Ngay15" msprop:Generator_ColumnPropNameInTable="Ngay15Column" msprop:Generator_ColumnVarNameInTable="columnNgay15" msprop:Generator_UserColumnName="Ngay15" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay16" msprop:Generator_ColumnPropNameInRow="Ngay16" msprop:Generator_ColumnPropNameInTable="Ngay16Column" msprop:Generator_ColumnVarNameInTable="columnNgay16" msprop:Generator_UserColumnName="Ngay16" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay17" msprop:Generator_ColumnPropNameInRow="Ngay17" msprop:Generator_ColumnPropNameInTable="Ngay17Column" msprop:Generator_ColumnVarNameInTable="columnNgay17" msprop:Generator_UserColumnName="Ngay17" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay18" msprop:Generator_ColumnPropNameInRow="Ngay18" msprop:Generator_ColumnPropNameInTable="Ngay18Column" msprop:Generator_ColumnVarNameInTable="columnNgay18" msprop:Generator_UserColumnName="Ngay18" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay19" msprop:Generator_ColumnPropNameInRow="Ngay19" msprop:Generator_ColumnPropNameInTable="Ngay19Column" msprop:Generator_ColumnVarNameInTable="columnNgay19" msprop:Generator_UserColumnName="Ngay19" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay20" msprop:Generator_ColumnPropNameInRow="Ngay20" msprop:Generator_ColumnPropNameInTable="Ngay20Column" msprop:Generator_ColumnVarNameInTable="columnNgay20" msprop:Generator_UserColumnName="Ngay20" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay21" msprop:Generator_ColumnPropNameInRow="Ngay21" msprop:Generator_ColumnPropNameInTable="Ngay21Column" msprop:Generator_ColumnVarNameInTable="columnNgay21" msprop:Generator_UserColumnName="Ngay21" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay22" msprop:Generator_ColumnPropNameInRow="Ngay22" msprop:Generator_ColumnPropNameInTable="Ngay22Column" msprop:Generator_ColumnVarNameInTable="columnNgay22" msprop:Generator_UserColumnName="Ngay22" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay23" msprop:Generator_ColumnPropNameInRow="Ngay23" msprop:Generator_ColumnPropNameInTable="Ngay23Column" msprop:Generator_ColumnVarNameInTable="columnNgay23" msprop:Generator_UserColumnName="Ngay23" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay24" msprop:Generator_ColumnPropNameInRow="Ngay24" msprop:Generator_ColumnPropNameInTable="Ngay24Column" msprop:Generator_ColumnVarNameInTable="columnNgay24" msprop:Generator_UserColumnName="Ngay24" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay25" msprop:Generator_ColumnPropNameInRow="Ngay25" msprop:Generator_ColumnPropNameInTable="Ngay25Column" msprop:Generator_ColumnVarNameInTable="columnNgay25" msprop:Generator_UserColumnName="Ngay25" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay26" msprop:Generator_ColumnPropNameInRow="Ngay26" msprop:Generator_ColumnPropNameInTable="Ngay26Column" msprop:Generator_ColumnVarNameInTable="columnNgay26" msprop:Generator_UserColumnName="Ngay26" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay27" msprop:Generator_ColumnPropNameInRow="Ngay27" msprop:Generator_ColumnPropNameInTable="Ngay27Column" msprop:Generator_ColumnVarNameInTable="columnNgay27" msprop:Generator_UserColumnName="Ngay27" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay28" msprop:Generator_ColumnPropNameInRow="Ngay28" msprop:Generator_ColumnPropNameInTable="Ngay28Column" msprop:Generator_ColumnVarNameInTable="columnNgay28" msprop:Generator_UserColumnName="Ngay28" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay29" msprop:Generator_ColumnPropNameInRow="Ngay29" msprop:Generator_ColumnPropNameInTable="Ngay29Column" msprop:Generator_ColumnVarNameInTable="columnNgay29" msprop:Generator_UserColumnName="Ngay29" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay30" msprop:Generator_ColumnPropNameInRow="Ngay30" msprop:Generator_ColumnPropNameInTable="Ngay30Column" msprop:Generator_ColumnVarNameInTable="columnNgay30" msprop:Generator_UserColumnName="Ngay30" type="xs:string" minOccurs="0" />
+              <xs:element name="Ngay31" msprop:Generator_ColumnPropNameInRow="Ngay31" msprop:Generator_ColumnPropNameInTable="Ngay31Column" msprop:Generator_ColumnVarNameInTable="columnNgay31" msprop:Generator_UserColumnName="Ngay31" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
