@@ -100,5 +100,18 @@ namespace QUANLY_NHANSU
                 return;
             }
         }
+
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Kiểm tra nếu phím Enter được nhấn
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                // Ngăn chặn sự kiện KeyPress để không thêm ký tự Enter vào TextBox
+                e.Handled = true;
+
+                // Gọi sự kiện Click của nút đăng nhập
+                btnDangNhap.PerformClick();
+            }
+        }
     }
 }

@@ -136,6 +136,7 @@
             this.txtPass.Text = "MẬT KHẨU";
             this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
+            this.txtPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             this.txtPass.Leave += new System.EventHandler(this.txtPass_Leave);
             // 
             // txtEmail
@@ -150,6 +151,7 @@
             this.txtEmail.TabIndex = 2;
             this.txtEmail.Text = "EMAIL ĐĂNG NHẬP";
             this.txtEmail.Enter += new System.EventHandler(this.txtEmail_Enter);
+            this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
             this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // label2
