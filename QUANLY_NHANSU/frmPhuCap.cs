@@ -61,7 +61,7 @@ namespace QUANLY_NHANSU
 
         private void dgvPhuCap_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex > 0)
+            if(e.RowIndex >= 0)
             {
                 r = dgvPhuCap.Rows[e.RowIndex]; //lấy ra dòng vừa chọn
             }
