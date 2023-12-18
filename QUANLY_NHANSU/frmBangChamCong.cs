@@ -17,6 +17,7 @@ namespace QUANLY_NHANSU
     {
         BLLBangChamCong _bangchamcong;
         private DataGridViewRow r;
+        ToolTip toolTip1;
         public frmBangChamCong()
         {
             InitializeComponent();
@@ -26,12 +27,15 @@ namespace QUANLY_NHANSU
         private void frmBangChamCong_Load(object sender, EventArgs e)
         {
             _bangchamcong = new BLLBangChamCong();
+            toolTip1 = new ToolTip();
             loadData();
         }
         void loadData()
         {
             BLLBangChamCong bcc = new BLLBangChamCong();
             dgvBangChamCong.DataSource = bcc.GetAllBangChamCong();
+            // Bỏ chọn tất cả các dòng
+            dgvBangChamCong.ClearSelection();
         }
         private void dgvBangChamCong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -105,6 +109,29 @@ namespace QUANLY_NHANSU
                 return;
             }
             dgvBangChamCong.DataSource = _bangchamcong.TimKiemBangChamCong(int.Parse(cbbThang.SelectedItem.ToString()), cbbNam.SelectedItem.ToString());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            cbbThang.SelectedIndex = -1;
+            cbbNam.SelectedIndex = -1;
+            loadData();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            // Thay đổi cursor khi di chuyển vào PictureBox
+            Cursor = Cursors.Hand;
+
+            toolTip1.Show("Làm mới", pictureBox1, 0, -20);
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            // Khôi phục cursor khi rời khỏi PictureBox
+            Cursor = Cursors.Default;
+            toolTip1.Hide(pictureBox1);
         }
 
         //private void button1_Click(object sender, EventArgs e)

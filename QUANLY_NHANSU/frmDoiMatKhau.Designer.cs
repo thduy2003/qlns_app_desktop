@@ -40,7 +40,7 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(194, 28);
+            this.txtPass.Location = new System.Drawing.Point(197, 28);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(214, 22);
             this.txtPass.TabIndex = 11;
@@ -81,7 +81,7 @@
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(194, 68);
+            this.txtNewPass.Location = new System.Drawing.Point(197, 68);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(214, 22);
             this.txtNewPass.TabIndex = 13;
@@ -92,13 +92,13 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label1.Location = new System.Drawing.Point(85, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 23);
+            this.label1.Size = new System.Drawing.Size(102, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "Mật khẩu mới:";
             // 
             // txtConfirmPass
             // 
-            this.txtConfirmPass.Location = new System.Drawing.Point(194, 104);
+            this.txtConfirmPass.Location = new System.Drawing.Point(197, 104);
             this.txtConfirmPass.Name = "txtConfirmPass";
             this.txtConfirmPass.Size = new System.Drawing.Size(214, 22);
             this.txtConfirmPass.TabIndex = 15;
@@ -118,7 +118,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(431, 196);
+            this.ClientSize = new System.Drawing.Size(443, 196);
             this.Controls.Add(this.txtConfirmPass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNewPass);

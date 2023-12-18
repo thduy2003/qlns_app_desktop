@@ -21,6 +21,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        //khởi tạo có dòng truyền vào để lấy thông tin ra từ dòng để truyền vào form điều chỉnh
         public frmDieuChinhPhuCap(DataGridViewRow r)
         {
             this.r = r;
@@ -32,6 +33,7 @@ namespace QUANLY_NHANSU
             _phucap = new BLLPhuCap();
             _nhanvien = new BLLNhanVien();
             LoadCombobox();
+            // nếu có dòng truyền vào tức là đang sửa thông tin và ngược lại là thêm
             if (r != null)
             {
                 cbbNhanVien.Text = r.Cells["TenNhanVien"].Value.ToString();

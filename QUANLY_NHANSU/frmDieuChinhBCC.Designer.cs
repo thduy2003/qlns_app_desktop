@@ -87,6 +87,7 @@
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(177, 26);
             this.txtThang.TabIndex = 14;
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
             // 
             // label1
             // 
@@ -105,6 +106,7 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(180, 26);
             this.txtNam.TabIndex = 12;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // lblNam
             // 
@@ -112,7 +114,7 @@
             this.lblNam.Font = new System.Drawing.Font("Tahoma", 9F);
             this.lblNam.Location = new System.Drawing.Point(13, 32);
             this.lblNam.Name = "lblNam";
-            this.lblNam.Size = new System.Drawing.Size(49, 23);
+            this.lblNam.Size = new System.Drawing.Size(39, 18);
             this.lblNam.TabIndex = 11;
             this.lblNam.Text = "Năm";
             // 

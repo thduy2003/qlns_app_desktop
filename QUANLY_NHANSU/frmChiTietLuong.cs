@@ -18,6 +18,7 @@ namespace QUANLY_NHANSU
         private string nam;
         private int thang;
         private int maLuong;
+        // khởi tạo gồm nam thang và mã lương để biết đang xem chi tiết mã lương nào
         public frmChiTietLuong(string nam, int thang, int maLuong)
         {
             this.nam = nam;
@@ -36,6 +37,7 @@ namespace QUANLY_NHANSU
 
         private void btnIn_Click(object sender, EventArgs e)
         {
+            
             var result = _luong.GetChiTietLuong(nam, thang, maLuong);
             DataTable dt = new DataTable();
 

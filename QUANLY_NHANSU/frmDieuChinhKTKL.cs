@@ -21,6 +21,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        //khởi tạo form với dòng truyền vào để hiển thị thông tin từ dòng lên form
         public frmDieuChinhKTKL(DataGridViewRow r)
         {
             this.r = r;
@@ -32,7 +33,7 @@ namespace QUANLY_NHANSU
             _ktkl = new BLLKhenThuongKyLuat();
             _nhanvien = new BLLNhanVien();
             LoadCombobox();
-
+            // nếu có dòng truyền vào thì là đang sửa còn không thì thêm
             if (r != null)
             {
                 cbbNhanVien.Text = r.Cells["TenNhanVien"].Value.ToString();
@@ -64,7 +65,12 @@ namespace QUANLY_NHANSU
                     MessageBoxIcon.Warning);
                 return;
             }
-
+            if(String.IsNullOrEmpty(txtLyDo.Text) || String.IsNullOrEmpty(txtNoiDung.Text))
+            {
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin", "Chú ý", MessageBoxButtons.OK,
+                   MessageBoxIcon.Warning);
+                return;
+            }
             
 
             if (r != null)

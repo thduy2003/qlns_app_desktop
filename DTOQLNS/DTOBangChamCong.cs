@@ -8,11 +8,16 @@ namespace DTOQLNS
 {
     public class DTOBangChamCong
     {
-        public int MaBangChamCong { get; set; }
-        public string Nam { get; set; }
-        public int? Thang { get; set; }
+        
+        private int maBangChamCong;
+        private string nam;
+        private int thang;
+        private string trangThai;
 
-        public string TrangThai { get; set; }
+        public int MaBangChamCong { get => maBangChamCong; set => maBangChamCong = value; }
+        public string Nam { get => nam; set => nam = value; }
+        public int Thang { get => thang; set => thang = value; }
+        public string TrangThai { get => trangThai; set => trangThai = value; }
         //Thêm các trường khác nếu cần
     }
     public class DTOBangChamCongChiTiet

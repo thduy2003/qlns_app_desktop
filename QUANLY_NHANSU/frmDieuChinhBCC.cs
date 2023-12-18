@@ -20,6 +20,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        //khởi tạo form truyền vào dòng để hiển thông tin từ dòng đó vào form 
         public frmDieuChinhBCC(DataGridViewRow r)
         {
             InitializeComponent();
@@ -29,6 +30,7 @@ namespace QUANLY_NHANSU
         private void frmDieuChinhBCC_Load(object sender, EventArgs e)
         {
             _bangchamcong = new BLLBangChamCong();
+            // nếu có dòng truyền vào tức là đang sửa và ngược lại đang thêm
             if (r != null)
             {
 
@@ -108,6 +110,16 @@ namespace QUANLY_NHANSU
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        //ràng bbuoocj tháng và năm phải nhập số và giới hạn kí tự nhập vào
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số.", 4);
+        }
+
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số.", 2);
         }
     }
 }

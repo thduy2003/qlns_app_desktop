@@ -64,6 +64,7 @@
     <Compile Include="BLLPhongBan.cs" />
     <Compile Include="BLLPhuCap.cs" />
     <Compile Include="BLLTangCa.cs" />
+    <Compile Include="BLLThongBaoNghi.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

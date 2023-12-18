@@ -8,14 +8,26 @@ namespace DTOQLNS
 {
     public class DTONhanVien
     {
-        public int MaNhanVien { get; set; }
-        public string HoTen { get; set; }
-        public byte[] HinhAnh { get; set; }
-        public string GioiTinh { get; set; }
-        public string DiaChi { get; set; }
-        public string SDT { get; set; }
-        public string Email { get; set; }
-        public string CCCD { get; set; }
-        public string PhongBan { get; set; }
+        private int maNhanVien;
+        private string hoTen;
+        private byte[] hinhAnh;
+        private string gioiTinh;
+        private string diaChi;
+        private string sDT;
+        private string email;
+        private string cCCD;
+        private string phongBan;
+        private string chucVu;
+
+        public int MaNhanVien { get => maNhanVien; set => maNhanVien = value; }
+        public string HoTen { get => hoTen; set => hoTen = value; }
+        public byte[] HinhAnh { get => hinhAnh; set => hinhAnh = value; }
+        public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
+        public string DiaChi { get => diaChi; set => diaChi = value; }
+        public string SDT { get => sDT; set => sDT = value; }
+        public string Email { get => email; set => email = value; }
+        public string CCCD { get => cCCD; set => cCCD = value; }
+        public string PhongBan { get => phongBan; set => phongBan = value; }
+        public string ChucVu { get => chucVu; set => chucVu = value; }
     }
 }

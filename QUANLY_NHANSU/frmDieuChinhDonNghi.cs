@@ -17,13 +17,13 @@ namespace QUANLY_NHANSU
         private DataGridViewRow r;
         BLLNghiPhep _nghiphep;
         private int maNhanVien;
-
+        // khởi tạo form có maNhanVien truyền vào để biết thằng nào nộp đơn
         public frmDieuChinhDonNghi(int maNhanVien)
         {
             this.maNhanVien = maNhanVien;
             InitializeComponent();
         }
-
+        // đã bỏ không cho sửa thông tin nữa nha
         public frmDieuChinhDonNghi(DataGridViewRow r, int maNhanVien)
         {
             this.r = r;

@@ -8,9 +8,14 @@ namespace DTOQLNS
 {
     public class DTOLoaiCa
     {
-        public int MaLoaiCa { get; set; }
-        public string TenLoaiCa { get; set; }
-        public string GioBatDau { get; set; }
-        public string GioKetThuc { get; set; }
+        private int maLoaiCa;
+        private string tenLoaiCa;
+        private string gioBatDau;
+        private string gioKetThuc;
+
+        public int MaLoaiCa { get => maLoaiCa; set => maLoaiCa = value; }
+        public string TenLoaiCa { get => tenLoaiCa; set => tenLoaiCa = value; }
+        public string GioBatDau { get => gioBatDau; set => gioBatDau = value; }
+        public string GioKetThuc { get => gioKetThuc; set => gioKetThuc = value; }
     }
 }

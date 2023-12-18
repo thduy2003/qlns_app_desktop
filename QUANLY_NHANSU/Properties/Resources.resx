@@ -127,8 +127,8 @@
   <data name="hethong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hethong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="HR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\HR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phu-cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phu-cap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tang-ca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tang-ca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,8 +142,14 @@
   <data name="khen-thuong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\khen-thuong.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="loading-waiting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\loading-waiting.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pngegg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pngegg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chamcong" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chamcong.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -154,13 +160,16 @@
   <data name="HR-login1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\HR-login1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="HR2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\HR2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nghi-phep" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nghi-phep.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lich-lam-viec" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lich-lam-viec.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phu-cap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phu-cap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="refresh_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\refresh_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

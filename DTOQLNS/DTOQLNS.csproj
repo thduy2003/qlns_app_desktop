@@ -65,6 +65,7 @@
     <Compile Include="DTOPhongBan.cs" />
     <Compile Include="DTOPhuCap.cs" />
     <Compile Include="DTOTangCa.cs" />
+    <Compile Include="DTOThongBaoNghi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

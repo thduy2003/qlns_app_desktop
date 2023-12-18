@@ -44,6 +44,7 @@ namespace DALQLNS
             var kq = from llv in db.LichLamViecs
                      join nv in db.NhanViens on llv.MaNhanVien equals nv.MaNhanVien
                      join ca in db.LoaiCas on llv.MaLoaiCa equals ca.MaLoaiCa
+                     // nếu truyền lên -1 tức là true luôn bỏ qua lọc theo maNV để có thể tìm kiếm 1 trong 2 hoặc cả 2
                      where (maNV == -1 || llv.MaNhanVien == maNV)
                        && (maLoaiCa == -1 || llv.MaLoaiCa == maLoaiCa)
                      select new DTOLichLamViec

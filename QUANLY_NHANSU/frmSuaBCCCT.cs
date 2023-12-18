@@ -24,6 +24,7 @@ namespace QUANLY_NHANSU
         public string tenNhanVien;
         public int maBangChamCong;
         private DataGridViewRow r;
+        //khởi tạo form sửa bccct với maNV, thu,ngay,tenNhanVien,maBangChamCong để hiển thị thông tin chấm công của người đó
         public frmSuaBCCCT(int maNhanVien, string thu, DateTime ngay, string tenNhanVien, int maBangChamCong)
         {
             this.thu = thu;
@@ -57,6 +58,7 @@ namespace QUANLY_NHANSU
         }
         void loadData()
         {
+            //get chitiet cham cong cua nhân viên đó vào ngày đó và thứ đó
             dgvChiTietChamCong.DataSource = _bcc.GetChiTietBCC(maNhanVien, thu, ngay);
         }
         void reset()
@@ -69,7 +71,7 @@ namespace QUANLY_NHANSU
             
             if (e.RowIndex >= 0)
             {
-                r = dgvChiTietChamCong.Rows[e.RowIndex];
+                r = dgvChiTietChamCong.Rows[e.RowIndex]; // lấy ra dòng đã chọn
               
                
                 mtbGioRa.Text = r.Cells["GioRa"].Value.ToString();
@@ -166,6 +168,7 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Vui lòng chọn dữ liệu chấm công cần xóa", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //nếu người dùng chọn xác nhận thì true tức sẽ xóa , còn không  thì false là không xóa
             if (MessageBox.Show($"Bạn có chắc chắn dữ liệu: {r.Cells["MaDuLieuChamCong"].Value?.ToString()} ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try

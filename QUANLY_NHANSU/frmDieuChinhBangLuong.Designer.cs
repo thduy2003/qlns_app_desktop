@@ -87,6 +87,7 @@
             this.txtThang.Name = "txtThang";
             this.txtThang.Size = new System.Drawing.Size(180, 26);
             this.txtThang.TabIndex = 23;
+            this.txtThang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtThang_KeyPress);
             // 
             // label1
             // 
@@ -105,6 +106,7 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(185, 26);
             this.txtNam.TabIndex = 21;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // lblNam
             // 

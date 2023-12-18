@@ -177,6 +177,17 @@
           <Property Name="Ngay" Type="date" />
           <Property Name="SoGio" Type="int" />
         </EntityType>
+        <EntityType Name="ThongBaoNghi">
+          <Key>
+            <PropertyRef Name="MaThongBao" />
+          </Key>
+          <Property Name="MaThongBao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaBangChamCong" Type="int" Nullable="false" />
+          <Property Name="TieuDe" Type="nvarchar" MaxLength="100" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="200" />
+          <Property Name="TuNgay" Type="date" />
+          <Property Name="DenNgay" Type="date" />
+        </EntityType>
         <Association Name="FK_ChiTietLuong_Luong">
           <End Role="Luong" Type="Self.Luong" Multiplicity="1" />
           <End Role="ChiTietLuong" Type="Self.ChiTietLuong" Multiplicity="*" />
@@ -381,6 +392,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ThongBaoNghi_BangChamCong">
+          <End Role="BangChamCong" Type="Self.BangChamCong" Multiplicity="1" />
+          <End Role="ThongBaoNghi" Type="Self.ThongBaoNghi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BangChamCong">
+              <PropertyRef Name="MaBangChamCong" />
+            </Principal>
+            <Dependent Role="ThongBaoNghi">
+              <PropertyRef Name="MaBangChamCong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="QUANLYNHANSUModelStoreContainer">
           <EntitySet Name="BangChamCong" EntityType="Self.BangChamCong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ChiTietLuong" EntityType="Self.ChiTietLuong" Schema="dbo" store:Type="Tables" />
@@ -399,6 +422,7 @@
           <EntitySet Name="PhuCap" EntityType="Self.PhuCap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TangCa" EntityType="Self.TangCa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongBaoNghi" EntityType="Self.ThongBaoNghi" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ChiTietLuong_Luong" Association="Self.FK_ChiTietLuong_Luong">
             <End Role="Luong" EntitySet="Luong" />
             <End Role="ChiTietLuong" EntitySet="ChiTietLuong" />
@@ -466,6 +490,10 @@
           <AssociationSet Name="FK_TangCa_NhanVien" Association="Self.FK_TangCa_NhanVien">
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="TangCa" EntitySet="TangCa" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThongBaoNghi_BangChamCong" Association="Self.FK_ThongBaoNghi_BangChamCong">
+            <End Role="BangChamCong" EntitySet="BangChamCong" />
+            <End Role="ThongBaoNghi" EntitySet="ThongBaoNghi" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -693,6 +721,11 @@
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="DonNghiPhep" EntitySet="DonNghiPheps" />
           </AssociationSet>
+          <EntitySet Name="ThongBaoNghis" EntityType="QUANLYNHANSUModel.ThongBaoNghi" />
+          <AssociationSet Name="FK_ThongBaoNghi_BangChamCong" Association="QUANLYNHANSUModel.FK_ThongBaoNghi_BangChamCong">
+            <End Role="BangChamCong" EntitySet="BangChamCongs" />
+            <End Role="ThongBaoNghi" EntitySet="ThongBaoNghis" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="BangChamCong">
           <Key>
@@ -703,6 +736,7 @@
           <Property Name="Thang" Type="Int32" />
           <Property Name="TrangThai" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
           <NavigationProperty Name="DuLieuChamCongs" Relationship="QUANLYNHANSUModel.FK_DuLieuChamCong_BangChamCong1" FromRole="BangChamCong" ToRole="DuLieuChamCong" />
+          <NavigationProperty Name="ThongBaoNghis" Relationship="QUANLYNHANSUModel.FK_ThongBaoNghi_BangChamCong" FromRole="BangChamCong" ToRole="ThongBaoNghi" />
         </EntityType>
         <EntityType Name="DuLieuChamCong">
           <Key>
@@ -969,6 +1003,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="ThongBaoNghi">
+          <Key>
+            <PropertyRef Name="MaThongBao" />
+          </Key>
+          <Property Name="MaThongBao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaBangChamCong" Type="Int32" Nullable="false" />
+          <Property Name="TieuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="TuNgay" Type="DateTime" Precision="0" />
+          <Property Name="DenNgay" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="BangChamCong" Relationship="QUANLYNHANSUModel.FK_ThongBaoNghi_BangChamCong" FromRole="ThongBaoNghi" ToRole="BangChamCong" />
+        </EntityType>
+        <Association Name="FK_ThongBaoNghi_BangChamCong">
+          <End Type="QUANLYNHANSUModel.BangChamCong" Role="BangChamCong" Multiplicity="1" />
+          <End Type="QUANLYNHANSUModel.ThongBaoNghi" Role="ThongBaoNghi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BangChamCong">
+              <PropertyRef Name="MaBangChamCong" />
+            </Principal>
+            <Dependent Role="ThongBaoNghi">
+              <PropertyRef Name="MaBangChamCong" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1161,6 +1219,18 @@
                 <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
                 <ScalarProperty Name="MaLoaiNghiPhep" ColumnName="MaLoaiNghiPhep" />
                 <ScalarProperty Name="MaDonNghiPhep" ColumnName="MaDonNghiPhep" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongBaoNghis">
+            <EntityTypeMapping TypeName="QUANLYNHANSUModel.ThongBaoNghi">
+              <MappingFragment StoreEntitySet="ThongBaoNghi">
+                <ScalarProperty Name="DenNgay" ColumnName="DenNgay" />
+                <ScalarProperty Name="TuNgay" ColumnName="TuNgay" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="MaBangChamCong" ColumnName="MaBangChamCong" />
+                <ScalarProperty Name="MaThongBao" ColumnName="MaThongBao" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

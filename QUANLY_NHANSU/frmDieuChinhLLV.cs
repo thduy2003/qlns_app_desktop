@@ -22,6 +22,7 @@ namespace QUANLY_NHANSU
         BLLNhanVien _nhanvien;
         BLLLoaiCa _loaica;
         private DataGridViewRow r;
+        // khởi tạo form có dòng truyền vào để lấy thông tin hiển thị lên form
         public frmDieuChinhLLV(DataGridViewRow r)
         {
             this.r = r;
@@ -45,6 +46,7 @@ namespace QUANLY_NHANSU
             _loaica = new BLLLoaiCa();
           
             loadCombobox();
+            // có dòng truyền vào tức là đang sửa và ngược lại là đang thêm
             if(r != null)
             {
                 cbbNhanVien.Text = r.Cells["HoTenNV"].Value.ToString();

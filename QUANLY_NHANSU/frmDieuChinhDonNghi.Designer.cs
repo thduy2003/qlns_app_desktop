@@ -45,7 +45,7 @@
             // txtLyDo
             // 
             this.txtLyDo.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtLyDo.Location = new System.Drawing.Point(85, 44);
+            this.txtLyDo.Location = new System.Drawing.Point(88, 44);
             this.txtLyDo.Multiline = true;
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Size = new System.Drawing.Size(197, 22);
@@ -65,7 +65,7 @@
             // 
             this.dtpNgayNghi.Font = new System.Drawing.Font("Tahoma", 9F);
             this.dtpNgayNghi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayNghi.Location = new System.Drawing.Point(387, 44);
+            this.dtpNgayNghi.Location = new System.Drawing.Point(396, 44);
             this.dtpNgayNghi.Name = "dtpNgayNghi";
             this.dtpNgayNghi.Size = new System.Drawing.Size(204, 26);
             this.dtpNgayNghi.TabIndex = 22;
@@ -84,7 +84,7 @@
             // 
             this.dtpNgayNopDon.Font = new System.Drawing.Font("Tahoma", 9F);
             this.dtpNgayNopDon.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgayNopDon.Location = new System.Drawing.Point(387, 7);
+            this.dtpNgayNopDon.Location = new System.Drawing.Point(396, 7);
             this.dtpNgayNopDon.Name = "dtpNgayNopDon";
             this.dtpNgayNopDon.Size = new System.Drawing.Size(204, 26);
             this.dtpNgayNopDon.TabIndex = 20;
@@ -103,7 +103,7 @@
             // 
             this.cbbLoaiPhep.Font = new System.Drawing.Font("Tahoma", 9F);
             this.cbbLoaiPhep.FormattingEnabled = true;
-            this.cbbLoaiPhep.Location = new System.Drawing.Point(85, 6);
+            this.cbbLoaiPhep.Location = new System.Drawing.Point(88, 6);
             this.cbbLoaiPhep.Name = "cbbLoaiPhep";
             this.cbbLoaiPhep.Size = new System.Drawing.Size(197, 26);
             this.cbbLoaiPhep.TabIndex = 24;
@@ -162,7 +162,7 @@
             "4",
             "5",
             "6"});
-            this.cbbThu.Location = new System.Drawing.Point(85, 74);
+            this.cbbThu.Location = new System.Drawing.Point(88, 74);
             this.cbbThu.Name = "cbbThu";
             this.cbbThu.Size = new System.Drawing.Size(197, 26);
             this.cbbThu.TabIndex = 30;
@@ -172,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(603, 161);
+            this.ClientSize = new System.Drawing.Size(616, 161);
             this.Controls.Add(this.cbbThu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHuy);

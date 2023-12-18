@@ -18,6 +18,7 @@ namespace QUANLY_NHANSU
         BLLPhuCap _phucap;
         private DataGridViewRow r;
         BLLNhanVien _nhanvien;
+        ToolTip toolTip1;
         public frmPhuCap()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace QUANLY_NHANSU
         {
             _phucap = new BLLPhuCap();
             _nhanvien = new BLLNhanVien();
+            toolTip1 = new ToolTip();
             LoadData();
             LoadComboBox();
             cbbNhanVien.SelectedIndex = -1;
@@ -37,6 +39,8 @@ namespace QUANLY_NHANSU
         void LoadData()
         {
             dgvPhuCap.DataSource = _phucap.GetAllPhuCap();
+            // Bỏ chọn tất cả các dòng
+            dgvPhuCap.ClearSelection();
         }
         void LoadComboBox()
         {
@@ -48,7 +52,7 @@ namespace QUANLY_NHANSU
             cbbPhuCap.DisplayMember = "TenPhuCap";
             cbbPhuCap.ValueMember = "MaLoaiPhuCap";
         }
-
+        //bấm thêm thì mở frm điều chỉnh
         private void btnThem_Click(object sender, EventArgs e)
         {
             new frmDieuChinhPhuCap().ShowDialog();
@@ -59,7 +63,7 @@ namespace QUANLY_NHANSU
         {
             if(e.RowIndex > 0)
             {
-                r = dgvPhuCap.Rows[e.RowIndex];
+                r = dgvPhuCap.Rows[e.RowIndex]; //lấy ra dòng vừa chọn
             }
         }
 
@@ -70,6 +74,7 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Vui lòng chọn phụ cấp cần sửa", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            // mở form điều chỉnh và khởi tạo dòng vừa chọn để hiển thị thông tin của dòng chọn vào form điều chỉnh
             new frmDieuChinhPhuCap(r).ShowDialog();
 
             LoadData();
@@ -83,6 +88,7 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Vui lòng chọn phụ cấp cần xóa", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //người dùng chọn ok trả về true tức là xác nhận xóa, còn bấm hủy thì false 
             if (MessageBox.Show($"Bạn có chắc chắn xóa phụ cấp của: {r.Cells["TenNhanVien"].Value?.ToString()} ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
@@ -108,7 +114,33 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Vui lòng nhập nội dung cần tìm kiếm", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            // nếu không chọn nhân viên nào thì gửi -1 có thì gửi đi giá trị, tương tự với phụ cấp
             dgvPhuCap.DataSource = _phucap.TimKiemPhuCap(cbbNhanVien.SelectedIndex >= 0 ? int.Parse(cbbNhanVien.SelectedValue.ToString()) : -1, cbbPhuCap.SelectedIndex >= 0 ? int.Parse(cbbPhuCap.SelectedValue.ToString()) : -1);
+        }
+
+      
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //nút làm mợi lại bỏ chọn combobox và load lại data
+            cbbNhanVien.SelectedIndex = -1;
+            cbbPhuCap.SelectedIndex = -1;
+            LoadData();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            // Thay đổi cursor khi di chuyển vào PictureBox và hiển thị tooltip
+            Cursor = Cursors.Hand;
+
+            toolTip1.Show("Làm mới", pictureBox1, 0, -20);
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            // Khôi phục cursor khi rời khỏi PictureBox
+            Cursor = Cursors.Default;
+            toolTip1.Hide(pictureBox1);
         }
     }
 }

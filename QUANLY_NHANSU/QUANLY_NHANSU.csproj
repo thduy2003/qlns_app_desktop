@@ -52,6 +52,7 @@
     <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Design" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
@@ -249,11 +250,17 @@
     <Compile Include="frmTangCa.Designer.cs">
       <DependentUpon>frmTangCa.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmThongBaoLichNghi.cs">
+    <Compile Include="frmDieuChinhThongBao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThongBaoLichNghi.Designer.cs">
-      <DependentUpon>frmThongBaoLichNghi.cs</DependentUpon>
+    <Compile Include="frmDieuChinhThongBao.Designer.cs">
+      <DependentUpon>frmDieuChinhThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongBaoNghi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongBaoNghi.Designer.cs">
+      <DependentUpon>frmThongBaoNghi.cs</DependentUpon>
     </Compile>
     <Compile Include="frmThongTinNhanVien.cs">
       <SubType>Form</SubType>
@@ -359,8 +366,11 @@
     <EmbeddedResource Include="frmTangCa.resx">
       <DependentUpon>frmTangCa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThongBaoLichNghi.resx">
-      <DependentUpon>frmThongBaoLichNghi.cs</DependentUpon>
+    <EmbeddedResource Include="frmDieuChinhThongBao.resx">
+      <DependentUpon>frmDieuChinhThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongBaoNghi.resx">
+      <DependentUpon>frmThongBaoNghi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThongTinNhanVien.resx">
       <DependentUpon>frmThongTinNhanVien.cs</DependentUpon>
@@ -480,6 +490,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\phu-cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading-waiting.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

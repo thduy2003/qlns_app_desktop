@@ -48,7 +48,7 @@
             "4",
             "5",
             "6"});
-            this.cbbThu.Location = new System.Drawing.Point(86, 70);
+            this.cbbThu.Location = new System.Drawing.Point(89, 70);
             this.cbbThu.Name = "cbbThu";
             this.cbbThu.Size = new System.Drawing.Size(230, 26);
             this.cbbThu.TabIndex = 12;
@@ -88,7 +88,7 @@
             // 
             this.cbbNhanVien.Font = new System.Drawing.Font("Tahoma", 9F);
             this.cbbNhanVien.FormattingEnabled = true;
-            this.cbbNhanVien.Location = new System.Drawing.Point(86, 26);
+            this.cbbNhanVien.Location = new System.Drawing.Point(89, 26);
             this.cbbNhanVien.Name = "cbbNhanVien";
             this.cbbNhanVien.Size = new System.Drawing.Size(230, 26);
             this.cbbNhanVien.TabIndex = 8;

@@ -39,6 +39,8 @@
         <EntityTypeShape EntityType="QUANLYNHANSUModel.DonNghiPhep" Width="1.5" PointX="11.25" PointY="7.5" />
         <AssociationConnector Association="QUANLYNHANSUModel.FK_DonNghiPhep_LoaiPhep" />
         <AssociationConnector Association="QUANLYNHANSUModel.FK_DonNghiPhep_NhanVien" />
+        <EntityTypeShape EntityType="QUANLYNHANSUModel.ThongBaoNghi" Width="1.5" PointX="5.25" PointY="0.75" />
+        <AssociationConnector Association="QUANLYNHANSUModel.FK_ThongBaoNghi_BangChamCong" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

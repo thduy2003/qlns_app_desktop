@@ -18,6 +18,7 @@ namespace DALQLNS
         public BangChamCong()
         {
             this.DuLieuChamCongs = new HashSet<DuLieuChamCong>();
+            this.ThongBaoNghis = new HashSet<ThongBaoNghi>();
         }
     
         public int MaBangChamCong { get; set; }
@@ -27,5 +28,7 @@ namespace DALQLNS
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DuLieuChamCong> DuLieuChamCongs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ThongBaoNghi> ThongBaoNghis { get; set; }
     }
 }

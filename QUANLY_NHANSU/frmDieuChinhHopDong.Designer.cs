@@ -58,7 +58,7 @@
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 23);
+            this.label1.Size = new System.Drawing.Size(101, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên hợp đồng";
             // 
@@ -136,6 +136,7 @@
             this.txtLanKy.Name = "txtLanKy";
             this.txtLanKy.Size = new System.Drawing.Size(197, 22);
             this.txtLanKy.TabIndex = 12;
+            this.txtLanKy.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLanKy_KeyPress);
             // 
             // label5
             // 
@@ -143,7 +144,7 @@
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label5.Location = new System.Drawing.Point(57, 54);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 23);
+            this.label5.Size = new System.Drawing.Size(51, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "Lần ký";
             // 
@@ -162,7 +163,7 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label6.Location = new System.Drawing.Point(44, 89);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 23);
+            this.label6.Size = new System.Drawing.Size(65, 18);
             this.label6.TabIndex = 13;
             this.label6.Text = "Thời hạn";
             // 
@@ -172,7 +173,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label7.Location = new System.Drawing.Point(36, 130);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 23);
+            this.label7.Size = new System.Drawing.Size(73, 18);
             this.label7.TabIndex = 15;
             this.label7.Text = "Nhân viên";
             // 
@@ -192,6 +193,7 @@
             this.txtHeSoLuong.Name = "txtHeSoLuong";
             this.txtHeSoLuong.Size = new System.Drawing.Size(204, 26);
             this.txtHeSoLuong.TabIndex = 18;
+            this.txtHeSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtHeSoLuong_KeyPress);
             // 
             // label8
             // 
@@ -211,14 +213,15 @@
             this.txtLuongCoBan.Name = "txtLuongCoBan";
             this.txtLuongCoBan.Size = new System.Drawing.Size(197, 22);
             this.txtLuongCoBan.TabIndex = 20;
+            this.txtLuongCoBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuongCoBan_KeyPress);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label9.Location = new System.Drawing.Point(15, 169);
+            this.label9.Location = new System.Drawing.Point(15, 167);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(121, 23);
+            this.label9.Size = new System.Drawing.Size(97, 18);
             this.label9.TabIndex = 19;
             this.label9.Text = "Lương cơ bản";
             // 

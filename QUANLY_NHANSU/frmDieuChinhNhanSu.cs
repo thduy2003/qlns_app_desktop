@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace QUANLY_NHANSU
 {
     public partial class frmDieuChinhNhanSu : Form
@@ -24,6 +26,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        //khởi tạo form với dòng truyền vào để từ dòng lấy thông tin hiển thị ra form
         public frmDieuChinhNhanSu(DataGridViewRow r)
         {
             this.r = r;
@@ -42,6 +45,7 @@ namespace QUANLY_NHANSU
             cbbChucVu.DisplayMember = "TenChucVu";
             cbbChucVu.ValueMember = "MaChucVu";
         }
+        // hàm chuyển đổi ảnh sang base64
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -65,7 +69,8 @@ namespace QUANLY_NHANSU
             _phongban = new BLLPhongBan();
             _chucvu = new BLLChucVu();
             _taikhoan = new BLLAccount();
-
+            //không cho điều chỉnh phòng ban
+            cbbPhongBan.Enabled = false;
 
             loadCombobox();
             if (r != null)
@@ -78,8 +83,9 @@ namespace QUANLY_NHANSU
                 radNam.Checked = r.Cells["GioiTinh"].Value.ToString() == "Nam" ? true : false;
                 radNu.Checked = r.Cells["GioiTinh"].Value.ToString() == "Nữ" ? true : false;
                 cbbPhongBan.Text = r.Cells["PhongBan"].Value.ToString();
+                cbbChucVu.Text = r.Cells["ChucVu"].Value.ToString();
                 object hinhAnhValue = r.Cells["HinhAnh"].Value;
-
+                // nếu có hinhAnh là base64 thì chuyển từ base64 sang ảnh để hiển thị còn không thì hiển thị error Image
                 if (hinhAnhValue != null && hinhAnhValue != DBNull.Value)
                 {
                     picHinhAnh.Image = Base64Image((byte[])hinhAnhValue);
@@ -95,6 +101,7 @@ namespace QUANLY_NHANSU
             else
             {
                 reset();
+                
                 btnThem.Text = "Thêm";
             }
         }
@@ -110,6 +117,7 @@ namespace QUANLY_NHANSU
             cbbChucVu.SelectedIndex = 0;
             txtEmail.Enabled = true;
         }
+        // hàm mở file chọn ảnh
         private void btnHinhAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
@@ -130,12 +138,7 @@ namespace QUANLY_NHANSU
                 txtHoTen.Select();
                 return;
             }
-            if (cbbPhongBan.SelectedIndex == -1)
-            {
-                MessageBox.Show("Vui lòng chọn phòng ban", "Chú ý", MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning);
-                return;
-            }
+   
             if (cbbChucVu.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui lòng chọn chức vụ", "Chú ý", MessageBoxButtons.OK,
@@ -202,7 +205,53 @@ namespace QUANLY_NHANSU
             }
             }
 
-            private void btnSua_Click(object sender, EventArgs e)
+          
+        // khi chọn chức vụ thì nó sẽ tự động chọn phòng ban để đồng bộ dữ liệu
+        private void cbbChucVu_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+            if (cbbChucVu.SelectedValue.ToString() != null)
+            {
+                string selectedChucVu = cbbChucVu.SelectedValue.ToString();
+        
+               
+                switch (selectedChucVu)
+                {
+                    case "1":
+                        cbbPhongBan.SelectedIndex = 0;
+                        break;
+                    case "2":
+                        cbbPhongBan.SelectedIndex = 1;
+                        break;
+                    case "3":
+                        cbbPhongBan.SelectedIndex = 2;
+                        break;
+                    case "4":
+                        cbbPhongBan.SelectedIndex = 3;
+                        break;
+                    default:
+                       
+                        break;
+                }
+           
+            }
+        }
+
+        
+        //ràng buộc phải nhập số và giới hạn số lượng kí tự
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số cho CCCD.",12);
+       
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số cho SDT.", 10);
+            
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }

@@ -20,6 +20,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        // khởi tạo form với dòng truyền vào để hiển thị thông tin vào form
         public frmDieuChinhBangLuong(DataGridViewRow r)
         {
             this.r = r;
@@ -30,6 +31,7 @@ namespace QUANLY_NHANSU
         private void frmDieuChinhBangLuong_Load(object sender, EventArgs e)
         {
             _bangluong = new BLLLuong();
+            // nếu có dòng truyền vào là đang sửa ngược lại đang xóa
             if (r != null)
             {
                 txtNam.Text = r.Cells["Nam"].Value.ToString() ?? string.Empty;
@@ -106,6 +108,17 @@ namespace QUANLY_NHANSU
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        //ràng buộc phải nhập số và giới hạn kí tự nhập vào
+
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số.", 4);
+        }
+
+        private void txtThang_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số.", 2);
         }
     }
 }

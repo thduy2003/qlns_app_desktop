@@ -18,11 +18,13 @@ namespace QUANLY_NHANSU
         private NhanVien _nhanvien;
         BLLNhanVien bllNhanVien;
         BLLLichLamViec bllLich;
+        // khởi tạo lấy đối tượng nhân viên đăng nhập
         public frmThongTinNhanVien(NhanVien _nhanvien)
         {
             this._nhanvien = _nhanvien;
             InitializeComponent();
         }
+        //Chuyển hình sang base64
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
             using (MemoryStream ms = new MemoryStream())
@@ -44,6 +46,8 @@ namespace QUANLY_NHANSU
         {
             bllNhanVien = new BLLNhanVien();
             bllLich = new BLLLichLamViec();
+            
+            //lấy thông tin nhân viên đang đăng nhập
             NhanVien nv = bllNhanVien.GetNhanVien(_nhanvien.MaNhanVien);
             txtCCCD.Text = nv.CCCD;
             txtDiaChi.Text = nv.DiaChi;
@@ -53,9 +57,10 @@ namespace QUANLY_NHANSU
             cbbChucVu.Text = nv.ChucVu.TenChucVu;
             cbbPhongBan.Text = nv.PhongBan.TenPhongBan;
             object hinhAnhValue = nv.HinhAnh;
-
+            //nếu có ảnh base64 trong db thì hiện nó còn không thì hiện ảnh error
             if (hinhAnhValue != null && hinhAnhValue != DBNull.Value)
             {
+                //chuyển base64 từ db ra dạng ảnh
                 picHinhAnh.Image = Base64Image((byte[])hinhAnhValue);
             }
             else
@@ -65,16 +70,19 @@ namespace QUANLY_NHANSU
             }
             radNam.Checked = nv.GioiTinh == "Nam" ? true : false;
             radNu.Checked = nv.GioiTinh == "Nữ" ? true : false;
+            //không cho chỉnh sửa các trường
             txtEmail.Enabled = false;
             txtHoTen.Enabled = false;
             cbbChucVu.Enabled = false;
             cbbPhongBan.Enabled = false;
             radNam.Enabled = false;
             radNu.Enabled = false;
+            //lấy ra lịch làm việc của nhân viên đăng nhập
             dgvLichLamViec.DataSource = bllLich.GetLichLamViecCuaNV(_nhanvien.MaNhanVien);
 
         }
 
+        //cập nhật lại thông tin
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             NhanVien nv = bllNhanVien.GetNhanVien(_nhanvien.MaNhanVien);
@@ -97,17 +105,30 @@ namespace QUANLY_NHANSU
                 return;
             }
         }
-
+        //hàm chọn hình ảnh , mở file
         private void btnHinhAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.Filter = "Picture file (.png, .jpg)| *.png; *.jpg ";
             openFile.Title = "Chọn hình ảnh";
+            // chọn file thì set hình ảnh đó vô picHinhAnh
             if (openFile.ShowDialog() == DialogResult.OK)
             {
                 picHinhAnh.Image = Image.FromFile(openFile.FileName);
                 picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+        }
+        //ràng buộc các kí tự nhập vào trường điện thoại
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số cho SDT.", 10);
+
+        }
+        //ràng buộc các kí tự nhập vào trường CCCD
+        private void txtCCCD_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số cho CCCD.", 12);
+
         }
     }
 }

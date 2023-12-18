@@ -16,6 +16,7 @@ namespace QUANLY_NHANSU
         BLLNghiPhep _nghiphep;
         private DataGridViewRow r;
         BLLNhanVien _nhanvien;
+        ToolTip toolTip1;
         public frmDuyetDonNghi()
         {
             InitializeComponent();
@@ -25,6 +26,8 @@ namespace QUANLY_NHANSU
         {
             _nghiphep = new BLLNghiPhep();
             _nhanvien = new BLLNhanVien();
+            toolTip1 = new ToolTip();
+
             LoadData();
             LoadCombobox();
             cbbNhanVien.SelectedIndex = -1;
@@ -35,7 +38,7 @@ namespace QUANLY_NHANSU
             cbbNhanVien.DataSource = _nhanvien.GetAllNhanVien();
             cbbNhanVien.DisplayMember = "HoTen";
             cbbNhanVien.ValueMember = "MaNhanVien";
-
+            //tạo dictionary gồm key và value để custom giá thành phần hiển thị và thành phần giá trị
             Dictionary<int, string> trangThaiItems = new Dictionary<int, string>
                                 {
                                     { 0, "Chờ duyệt" },
@@ -56,6 +59,8 @@ namespace QUANLY_NHANSU
             void LoadData()
         {
             dgvDonNghi.DataSource = _nghiphep.GetAllDonNghiPhep();
+            // Bỏ chọn tất cả các dòng
+            dgvDonNghi.ClearSelection();
         }
 
         private void dgvDonNghi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -85,6 +90,7 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Đơn này đã được duyệt rồi", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //người dùng chọn ok trả về true tức là xác nhận duyệt, còn bấm hủy thì false 
             if (MessageBox.Show($"Bạn có chắc chắn duyệt đơn nghỉ của: {r.Cells["TenNhanVien"].Value?.ToString()} ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
@@ -120,6 +126,7 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Đơn này đã được duyệt rồi", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            //người dùng chọn ok trả về true tức là xác nhận từ chối, còn bấm hủy thì false 
             if (MessageBox.Show($"Bạn có chắc chắn từ chối đơn nghỉ của: {r.Cells["TenNhanVien"].Value?.ToString()} ", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 try
@@ -137,7 +144,7 @@ namespace QUANLY_NHANSU
 
             }
         }
-
+        //format lại giá trị hiển thị của cột TrangThai trên datagridview vì nó đang có giá trị 0,1,2 => chờ duyệt , từ chối , đã duyệt
         private void dgvDonNghi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.ColumnIndex == dgvDonNghi.Columns["TrangThai"].Index && e.Value != null)
@@ -167,12 +174,36 @@ namespace QUANLY_NHANSU
                 MessageBox.Show("Vui lòng nhập nội dung cần tìm kiếm", "Chú ý", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            // nếu không chọn thì truyền -1 để có thể tìm kiếm 1 trong 2 hoặc cả 2
             dgvDonNghi.DataSource = _nghiphep.TimKiemNghiPhep(cbbNhanVien.SelectedIndex >= 0 ? int.Parse(cbbNhanVien.SelectedValue.ToString()) : -1, cbbTrangThai.SelectedIndex >= 0 ? int.Parse(cbbTrangThai.SelectedValue.ToString()) : -1);
         }
 
-        private void btnTaoThongBao_Click(object sender, EventArgs e)
+        //private void btnTaoThongBao_Click(object sender, EventArgs e)
+        //{
+        //    new frmDieuChinhThongBao().ShowDialog();
+        //}
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            new frmThongBaoLichNghi().ShowDialog();
+            //làm mới lại những cái đã tìm kiếm và load lại danh sách ban đầu
+            cbbNhanVien.SelectedIndex = -1;
+            cbbTrangThai.SelectedIndex = -1;
+            LoadData();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            // Thay đổi cursor khi di chuyển vào PictureBox và hiển thị tooltip
+            Cursor = Cursors.Hand;
+
+            toolTip1.Show("Làm mới", pictureBox1, 0, -20);
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            // Khôi phục cursor khi rời khỏi PictureBox
+            Cursor = Cursors.Default;
+            toolTip1.Hide(pictureBox1);
         }
     }
 }

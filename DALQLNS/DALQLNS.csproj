@@ -78,6 +78,7 @@
     <Compile Include="DALPhongBan.cs" />
     <Compile Include="DALPhuCap.cs" />
     <Compile Include="DALTangCa.cs" />
+    <Compile Include="DALThongBaoNghi.cs" />
     <Compile Include="DonNghiPhep.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -134,6 +135,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TangCa.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ThongBaoNghi.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
   </ItemGroup>

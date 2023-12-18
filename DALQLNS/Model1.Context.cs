@@ -42,5 +42,6 @@ namespace DALQLNS
         public virtual DbSet<LoaiPhep> LoaiPheps { get; set; }
         public virtual DbSet<TangCa> TangCas { get; set; }
         public virtual DbSet<DonNghiPhep> DonNghiPheps { get; set; }
+        public virtual DbSet<ThongBaoNghi> ThongBaoNghis { get; set; }
     }
 }

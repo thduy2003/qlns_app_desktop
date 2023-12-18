@@ -67,7 +67,7 @@
             // txtNoiDung
             // 
             this.txtNoiDung.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtNoiDung.Location = new System.Drawing.Point(99, 93);
+            this.txtNoiDung.Location = new System.Drawing.Point(102, 93);
             this.txtNoiDung.Multiline = true;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.Size = new System.Drawing.Size(379, 22);
@@ -86,7 +86,7 @@
             // txtLyDo
             // 
             this.txtLyDo.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtLyDo.Location = new System.Drawing.Point(99, 55);
+            this.txtLyDo.Location = new System.Drawing.Point(102, 55);
             this.txtLyDo.Multiline = true;
             this.txtLyDo.Name = "txtLyDo";
             this.txtLyDo.Size = new System.Drawing.Size(379, 22);
@@ -106,7 +106,7 @@
             // 
             this.dtpNgay.Font = new System.Drawing.Font("Tahoma", 9F);
             this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgay.Location = new System.Drawing.Point(355, 20);
+            this.dtpNgay.Location = new System.Drawing.Point(357, 20);
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(123, 26);
             this.dtpNgay.TabIndex = 15;
@@ -115,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label2.Location = new System.Drawing.Point(311, 24);
+            this.label2.Location = new System.Drawing.Point(313, 24);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 18);
             this.label2.TabIndex = 14;
@@ -125,7 +125,7 @@
             // 
             this.cbbNhanVien.Font = new System.Drawing.Font("Tahoma", 9F);
             this.cbbNhanVien.FormattingEnabled = true;
-            this.cbbNhanVien.Location = new System.Drawing.Point(99, 20);
+            this.cbbNhanVien.Location = new System.Drawing.Point(102, 20);
             this.cbbNhanVien.Name = "cbbNhanVien";
             this.cbbNhanVien.Size = new System.Drawing.Size(197, 26);
             this.cbbNhanVien.TabIndex = 13;

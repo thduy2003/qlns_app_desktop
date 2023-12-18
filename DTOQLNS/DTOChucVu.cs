@@ -8,7 +8,11 @@ namespace DTOQLNS
 {
     public class DTOChucVu
     {
-        public int MaChucVu { get; set; }
-        public string TenChucVu { get; set; }
+    
+        private int maChucVu;
+        private string tenChucVu;
+
+        public int MaChucVu { get => maChucVu; set => maChucVu = value; }
+        public string TenChucVu { get => tenChucVu; set => tenChucVu = value; }
     }
 }

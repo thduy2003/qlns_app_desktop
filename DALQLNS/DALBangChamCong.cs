@@ -6,6 +6,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DALQLNS
 {
@@ -18,7 +19,7 @@ namespace DALQLNS
             {
                 MaBangChamCong = bc.MaBangChamCong,
                 Nam = bc.Nam,
-                Thang = bc.Thang,
+                Thang = (int)bc.Thang,
                 TrangThai = bc.TrangThai
           
             }).ToList();
@@ -31,7 +32,7 @@ namespace DALQLNS
             {
                 MaBangChamCong = bc.MaBangChamCong,
                 Nam = bc.Nam,
-                Thang = bc.Thang,
+                Thang = (int)bc.Thang,
                 TrangThai = bc.TrangThai
 
             }).ToList();
@@ -285,6 +286,63 @@ namespace DALQLNS
                         }
                     }
                 }
+                //cập nhật ngày nghỉ theo thông báo vào chấm công 
+                var khoangThoiGian = from tbc in db.ThongBaoNghis.Where(x => x.MaBangChamCong == maBangChamCong)
+                             select new
+                             {
+                                 tuNgay = tbc.TuNgay,
+                                 denNgay = tbc.DenNgay
+                             };
+   
+                
+                foreach (var k in khoangThoiGian)
+                {
+                    DateTime TuNgay = (DateTime)k.tuNgay;
+                    DateTime DenNgay = (DateTime)k.denNgay;
+                    List<DateTime> ngayTrongKhoang = Enumerable.Range(0, (DenNgay - TuNgay).Days + 1)
+    .Select(offset => TuNgay.AddDays(offset))
+    .ToList();
+                    var listNhanVien = 
+                                           from llv in db.LichLamViecs
+                                        select new
+                                       {
+                                           
+                                           llv.MaNhanVien,
+                                    
+                                       };
+                    foreach (var data in listNhanVien)
+                    {
+                        var nv = danhSachChamCong.FirstOrDefault(x => x.MaNV == data.MaNhanVien);
+
+                        if (nv != null)
+                        { 
+                            foreach (var ngay in ngayTrongKhoang)
+                            {
+                                int ngayNghi = ngay.Day;
+
+                                if (ngayNghi > 0 && ngayNghi <= 31)
+                                {
+                                  
+                                    nv.GetType().GetProperty($"Ngay{ngayNghi}")?.SetValue(nv, 6);
+                                }
+
+                            }
+                           
+                            
+                        }
+                    }
+                }
+            
+                //cập nhật ngày nghỉ theo thông báo vào chấm công 
+                //var thongBaoNghiData = from tbc in db.ThongBaoNghis.Where(x =>x.TuNgay.Value.Month == duLieuChamCong.FirstOrDefault().Ngay.Value.Month && x.TuNgay.Value.Year == duLieuChamCong.FirstOrDefault().Ngay.Value.Year)
+                //                       join llv in db.LichLamViecs on GetThuFromNgay((DateTime)tbc.TuNgay) equals llv.Thu
+                //                       join lc in db.LoaiCas on llv.MaLoaiCa equals lc.MaLoaiCa
+                //                       select new
+                //                       {
+
+                //                       } 
+                                       
+           
                
             }
             return danhSachChamCong;

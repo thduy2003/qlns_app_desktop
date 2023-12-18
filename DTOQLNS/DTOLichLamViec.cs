@@ -8,9 +8,15 @@ namespace DTOQLNS
 {
     public class DTOLichLamViec
     {
-        public int MaLichLamViec { get; set; }
-        public string Ca { get; set; }
-        public string Thu { get; set; }
-        public string HoTenNV { get; set; }
+       
+        private int maLichLamViec;
+        private string ca;
+        private string thu;
+        private string hoTenNV;
+
+        public int MaLichLamViec { get => maLichLamViec; set => maLichLamViec = value; }
+        public string Ca { get => ca; set => ca = value; }
+        public string Thu { get => thu; set => thu = value; }
+        public string HoTenNV { get => hoTenNV; set => hoTenNV = value; }
     }
 }

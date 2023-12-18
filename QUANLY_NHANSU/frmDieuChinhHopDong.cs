@@ -21,6 +21,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        //khởi tạo form có dòng truyền vào để từ dòng có thông tin hiện lên form
         public frmDieuChinhHopDong(DataGridViewRow r)
         {
             InitializeComponent();
@@ -34,7 +35,7 @@ namespace QUANLY_NHANSU
             _nhanvien = new BLLNhanVien();
             _hopdong = new BLLHopDong();
             loadCombobox();
-           
+            // nếu có dòng tức là đangg sửa còn không thì đang thêm
             if (r != null)
             {
     
@@ -90,7 +91,18 @@ namespace QUANLY_NHANSU
                     MessageBoxIcon.Warning);
                 return;
             }
-
+            if(dtpNgayKetThuc.Value < dtpNgayBatDau.Value)
+            {
+                MessageBox.Show("Ngày kết thúc phải sau ngày bắt đầu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpNgayKetThuc.Value = dtpNgayBatDau.Value;
+                return;
+            }
+            if (dtpNgayKy.Value <= dtpNgayBatDau.Value)
+            {
+                MessageBox.Show("Ngày ký phải trước hoặc bằng ngày bắt đầu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                dtpNgayKy.Value = dtpNgayBatDau.Value;
+                return;
+            }
             if (r != null)
             {
                 // Sửa thông tin
@@ -154,6 +166,21 @@ namespace QUANLY_NHANSU
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        //ràng buộc phải nhập số và giới hạn kí tự nhập vào
+        private void txtLanKy_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số.",2);
+        }
+
+        private void txtLuongCoBan_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số.");
+        }
+
+        private void txtHeSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleDemicalNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số hoặc số thập phân.");
         }
     }
 }

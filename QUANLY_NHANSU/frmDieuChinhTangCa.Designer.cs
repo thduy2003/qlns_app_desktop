@@ -46,6 +46,7 @@
             this.txtSoGio.Name = "txtSoGio";
             this.txtSoGio.Size = new System.Drawing.Size(246, 22);
             this.txtSoGio.TabIndex = 32;
+            this.txtSoGio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoGio_KeyPress);
             // 
             // label8
             // 
@@ -53,7 +54,7 @@
             this.label8.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label8.Location = new System.Drawing.Point(155, 54);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(59, 23);
+            this.label8.Size = new System.Drawing.Size(47, 18);
             this.label8.TabIndex = 31;
             this.label8.Text = "Số giờ";
             // 
@@ -72,7 +73,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label7.Location = new System.Drawing.Point(9, 15);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(91, 23);
+            this.label7.Size = new System.Drawing.Size(73, 18);
             this.label7.TabIndex = 29;
             this.label7.Text = "Nhân viên";
             // 
@@ -91,7 +92,7 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label3.Location = new System.Drawing.Point(339, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 23);
+            this.label3.Size = new System.Drawing.Size(42, 18);
             this.label3.TabIndex = 27;
             this.label3.Text = "Ngày";
             // 

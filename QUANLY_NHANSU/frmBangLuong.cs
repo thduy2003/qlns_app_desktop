@@ -1,5 +1,6 @@
 ﻿using BLLQLNS;
 using DALQLNS;
+using DTOQLNS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,6 +17,7 @@ namespace QUANLY_NHANSU
     {
         BLLLuong _luong;
         private DataGridViewRow r;
+        ToolTip toolTip1;
         public frmBangLuong()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace QUANLY_NHANSU
         private void frmBangLuong_Load(object sender, EventArgs e)
         {
             _luong = new BLLLuong();
+            toolTip1 = new ToolTip();
             LoadData();
 
         }
@@ -31,6 +34,8 @@ namespace QUANLY_NHANSU
         {
             
             dgvBangLuong.DataSource = _luong.GetAllBangLuong();
+            // Bỏ chọn tất cả các dòng
+            dgvBangLuong.ClearSelection();
         }
 
         private void dgvBangLuong_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -104,6 +109,29 @@ namespace QUANLY_NHANSU
                 return;
             }
             dgvBangLuong.DataSource = _luong.TimKiemBangLuong(int.Parse(cbbThang.SelectedItem.ToString()), cbbNam.SelectedItem.ToString());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            cbbThang.SelectedIndex = -1;
+            cbbNam.SelectedIndex = -1;
+            LoadData();
+        }
+
+        private void pictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            // Thay đổi cursor khi di chuyển vào PictureBox
+            Cursor = Cursors.Hand;
+
+            toolTip1.Show("Làm mới", pictureBox1, 0, -20);
+        }
+
+        private void pictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            // Khôi phục cursor khi rời khỏi PictureBox
+            Cursor = Cursors.Default;
+            toolTip1.Hide(pictureBox1);
         }
     }
 }

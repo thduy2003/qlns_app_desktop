@@ -25,8 +25,9 @@ namespace QUANLY_NHANSU
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
             _taikhoan = new BLLAccount();
+           
         }
-
+        // khi chọn vào email thì tắt placeholder để nhập 
         private void txtEmail_Enter(object sender, EventArgs e)
         {
             if (txtEmail.Text == "EMAIL ĐĂNG NHẬP")
@@ -35,6 +36,7 @@ namespace QUANLY_NHANSU
               
             }
         }
+        // khi ra khỏi chọn vào email thì bật placeholder lại nếu chưa nhập gì
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             if (txtEmail.Text == "")
@@ -60,7 +62,7 @@ namespace QUANLY_NHANSU
                
             }
         }
-
+        // nếu tick chọn hiện mật khẩu thì hiển thị còn không thì hiện dấu * 
         private void chkAnHienMatKhau_CheckedChanged(object sender, EventArgs e)
         {
             if (chkAnHienMatKhau.Checked == true)
@@ -68,7 +70,7 @@ namespace QUANLY_NHANSU
             else
                 txtPass.PasswordChar = '*';
         }
-
+        // khi nào không tick thì mới hiện dấu * 
         private void txtPass_TextChanged(object sender, EventArgs e)
         {
             if(!chkAnHienMatKhau.Checked)
@@ -86,9 +88,12 @@ namespace QUANLY_NHANSU
                 return;
             }
            
+      
             var tk = _taikhoan.ValidateAccount(txtEmail.Text, txtPass.Text);
+            
             if (tk != null)
             {
+               
                 MessageBox.Show("Đăng nhập thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 _nhanvien = tk;
                 this.Dispose();

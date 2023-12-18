@@ -14,7 +14,9 @@ namespace DALQLNS
         {
             var kq = from nv in db.NhanViens.Where(x => x.DaThoiViec == 0)
                      join pb in db.PhongBans
-                     on nv.MaPhongBan equals pb.MaPhongBan
+                       on nv.MaPhongBan equals pb.MaPhongBan
+                     join cv in db.ChucVus
+                      on nv.MaChucVu equals cv.MaChucVu
                      select new DTONhanVien
                      {
                          MaNhanVien = nv.MaNhanVien,
@@ -25,7 +27,8 @@ namespace DALQLNS
                          SDT = nv.SDT,
                          Email = nv.Email,
                          CCCD = nv.CCCD,
-                         PhongBan = pb.TenPhongBan
+                         PhongBan = pb.TenPhongBan,
+                         ChucVu = cv.TenChucVu
                      };
             return kq.ToList();
         }
@@ -34,6 +37,8 @@ namespace DALQLNS
             var kq = from nv in db.NhanViens.Where(x => x.DaThoiViec == 0)
                      join pb in db.PhongBans
                      on nv.MaPhongBan equals pb.MaPhongBan
+                     join cv in db.ChucVus
+                      on nv.MaChucVu equals cv.MaChucVu
                      where (maNV == -1 || nv.MaNhanVien == maNV)
                         && (maPB == -1 || nv.MaPhongBan == maPB)
                      select new DTONhanVien
@@ -46,7 +51,8 @@ namespace DALQLNS
                          SDT = nv.SDT,
                          Email = nv.Email,
                          CCCD = nv.CCCD,
-                         PhongBan = pb.TenPhongBan
+                         PhongBan = pb.TenPhongBan,
+                         ChucVu = cv.TenChucVu
                      };
             return kq.ToList();
         }

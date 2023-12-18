@@ -36,6 +36,7 @@ namespace DALQLNS
         {
             var kq = from hd in db.HopDongs
                      join nv in db.NhanViens on hd.MaNhanVien equals nv.MaNhanVien
+                     // nếu truyền lên -1 tức là true luôn bỏ qua lọc theo maNV để có thể tìm kiếm 1 trong 2 hoặc cả 2
                      where (maNV == -1 || hd.MaNhanVien == maNV)
                         && (string.IsNullOrEmpty(tenHopDong) || hd.TenHopDong.Contains(tenHopDong))
                      select new DTOHopDong

@@ -76,7 +76,7 @@
             // 
             this.cbbNhanVien.Font = new System.Drawing.Font("Tahoma", 9F);
             this.cbbNhanVien.FormattingEnabled = true;
-            this.cbbNhanVien.Location = new System.Drawing.Point(85, 18);
+            this.cbbNhanVien.Location = new System.Drawing.Point(88, 18);
             this.cbbNhanVien.Name = "cbbNhanVien";
             this.cbbNhanVien.Size = new System.Drawing.Size(256, 26);
             this.cbbNhanVien.TabIndex = 3;
@@ -85,7 +85,7 @@
             // 
             this.cbbPhuCap.Font = new System.Drawing.Font("Tahoma", 9F);
             this.cbbPhuCap.FormattingEnabled = true;
-            this.cbbPhuCap.Location = new System.Drawing.Point(85, 58);
+            this.cbbPhuCap.Location = new System.Drawing.Point(88, 58);
             this.cbbPhuCap.Name = "cbbPhuCap";
             this.cbbPhuCap.Size = new System.Drawing.Size(256, 26);
             this.cbbPhuCap.TabIndex = 5;
@@ -113,7 +113,7 @@
             // txtNoiDung
             // 
             this.txtNoiDung.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtNoiDung.Location = new System.Drawing.Point(85, 97);
+            this.txtNoiDung.Location = new System.Drawing.Point(88, 97);
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.Size = new System.Drawing.Size(256, 26);
             this.txtNoiDung.TabIndex = 7;
@@ -123,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(354, 193);
+            this.ClientSize = new System.Drawing.Size(362, 193);
             this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbbPhuCap);

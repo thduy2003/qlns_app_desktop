@@ -21,6 +21,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        //khởi tạo đối tượng có dòng truyền vào để lấy thông tin từ dòng hiện ra form điều chỉnh
         public frmDieuChinhTangCa(DataGridViewRow r)
         {
             this.r = r;
@@ -32,7 +33,7 @@ namespace QUANLY_NHANSU
             _tangca = new BLLTangCa();
             _nhanvien = new BLLNhanVien();
             LoadComboBox();
-
+            // nếu có chọn dòng tức là frm điều chỉnh là sửa thông tin còn ngược lại là thêm thông t in
             if (r != null)
             {
                 cbbNhanVien.Text = r.Cells["TenNhanVien"].Value.ToString();
@@ -69,7 +70,7 @@ namespace QUANLY_NHANSU
                     MessageBoxIcon.Warning);
                 return;
             }
-
+            // nếu có chọn dòng và mở form điều chỉnh tức là đang sửa thông tin và ngược lại là thêm thông tin
             if (r != null)
             {
                 // Sửa thông tin
@@ -119,6 +120,11 @@ namespace QUANLY_NHANSU
         private void btnHuy_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+        // chỉ cho phép nhập số giờ là số hoặc số thập phân
+        private void txtSoGio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Program.HandleDemicalNumberKeyPress(sender as TextBox, e, "Vui lòng chỉ nhập số hoặc số thập phân.");
         }
     }
 }

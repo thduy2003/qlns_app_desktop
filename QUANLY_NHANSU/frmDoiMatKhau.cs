@@ -20,6 +20,7 @@ namespace QUANLY_NHANSU
         {
             InitializeComponent();
         }
+        // khởi tạo form đổi mật khẩu thì truyền nhân viên vào để biết tài khoản nhân viên đó
         public frmDoiMatKhau(NhanVien _nhanvien)
         {
             this._nhanvien = _nhanvien;
@@ -54,6 +55,7 @@ namespace QUANLY_NHANSU
             #endregion
            try
             {
+                // kiểm tra xem mật khẩu hiện tại có đúng không
                 var tk = _taikhoan.ValidateAccount(_nhanvien.Email, txtPass.Text);
                 if(tk == null)
                 {

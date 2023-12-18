@@ -48,7 +48,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnHinhAnh = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.picHinhAnh = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picHinhAnh)).BeginInit();
             this.SuspendLayout();
@@ -56,16 +56,17 @@
             // cbbChucVu
             // 
             this.cbbChucVu.FormattingEnabled = true;
-            this.cbbChucVu.Location = new System.Drawing.Point(529, 49);
+            this.cbbChucVu.Location = new System.Drawing.Point(532, 49);
             this.cbbChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbChucVu.Name = "cbbChucVu";
             this.cbbChucVu.Size = new System.Drawing.Size(193, 24);
             this.cbbChucVu.TabIndex = 41;
+            this.cbbChucVu.SelectedValueChanged += new System.EventHandler(this.cbbChucVu_SelectedValueChanged);
             // 
             // cbbPhongBan
             // 
             this.cbbPhongBan.FormattingEnabled = true;
-            this.cbbPhongBan.Location = new System.Drawing.Point(529, 17);
+            this.cbbPhongBan.Location = new System.Drawing.Point(532, 17);
             this.cbbPhongBan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbbPhongBan.Name = "cbbPhongBan";
             this.cbbPhongBan.Size = new System.Drawing.Size(193, 24);
@@ -85,7 +86,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label7.Location = new System.Drawing.Point(448, 22);
+            this.label7.Location = new System.Drawing.Point(448, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 18);
             this.label7.TabIndex = 38;
@@ -93,7 +94,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(529, 119);
+            this.txtDiaChi.Location = new System.Drawing.Point(532, 119);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(193, 22);
@@ -111,17 +112,18 @@
             // 
             // txtCCCD
             // 
-            this.txtCCCD.Location = new System.Drawing.Point(529, 83);
+            this.txtCCCD.Location = new System.Drawing.Point(532, 83);
             this.txtCCCD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCCCD.Name = "txtCCCD";
             this.txtCCCD.Size = new System.Drawing.Size(193, 22);
             this.txtCCCD.TabIndex = 35;
+            this.txtCCCD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCCCD_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label6.Location = new System.Drawing.Point(478, 81);
+            this.label6.Location = new System.Drawing.Point(478, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 18);
             this.label6.TabIndex = 34;
@@ -131,7 +133,7 @@
             // 
             this.radNu.AutoSize = true;
             this.radNu.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.radNu.Location = new System.Drawing.Point(305, 51);
+            this.radNu.Location = new System.Drawing.Point(305, 49);
             this.radNu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNu.Name = "radNu";
             this.radNu.Size = new System.Drawing.Size(48, 22);
@@ -144,7 +146,7 @@
             // 
             this.radNam.AutoSize = true;
             this.radNam.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.radNam.Location = new System.Drawing.Point(241, 51);
+            this.radNam.Location = new System.Drawing.Point(241, 49);
             this.radNam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.radNam.Name = "radNam";
             this.radNam.Size = new System.Drawing.Size(60, 22);
@@ -157,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label4.Location = new System.Drawing.Point(175, 54);
+            this.label4.Location = new System.Drawing.Point(175, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 18);
             this.label4.TabIndex = 31;
@@ -165,7 +167,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(242, 118);
+            this.txtEmail.Location = new System.Drawing.Point(242, 119);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(193, 22);
@@ -183,11 +185,12 @@
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(242, 80);
+            this.txtSDT.Location = new System.Drawing.Point(242, 83);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(193, 22);
             this.txtSDT.TabIndex = 28;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // label2
             // 
@@ -202,7 +205,7 @@
             // txtHoTen
             // 
             this.txtHoTen.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtHoTen.Location = new System.Drawing.Point(242, 15);
+            this.txtHoTen.Location = new System.Drawing.Point(242, 17);
             this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
@@ -213,7 +216,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label1.Location = new System.Drawing.Point(184, 22);
+            this.label1.Location = new System.Drawing.Point(184, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 18);
             this.label1.TabIndex = 25;
@@ -223,10 +226,10 @@
             // 
             this.btnHinhAnh.BackColor = System.Drawing.Color.LightBlue;
             this.btnHinhAnh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.btnHinhAnh.Location = new System.Drawing.Point(12, 200);
+            this.btnHinhAnh.Location = new System.Drawing.Point(15, 200);
             this.btnHinhAnh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHinhAnh.Name = "btnHinhAnh";
-            this.btnHinhAnh.Size = new System.Drawing.Size(144, 39);
+            this.btnHinhAnh.Size = new System.Drawing.Size(141, 39);
             this.btnHinhAnh.TabIndex = 24;
             this.btnHinhAnh.Text = "Chọn hình ảnh";
             this.btnHinhAnh.UseVisualStyleBackColor = false;
@@ -244,17 +247,17 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // btnSua
+            // btnHuy
             // 
-            this.btnSua.BackColor = System.Drawing.Color.LightBlue;
-            this.btnSua.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(465, 181);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(131, 42);
-            this.btnSua.TabIndex = 43;
-            this.btnSua.Text = "Hủy";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.LightBlue;
+            this.btnHuy.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.Location = new System.Drawing.Point(465, 181);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(131, 42);
+            this.btnHuy.TabIndex = 43;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // picHinhAnh
             // 
@@ -274,7 +277,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(742, 248);
-            this.Controls.Add(this.btnSua);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.cbbChucVu);
             this.Controls.Add(this.cbbPhongBan);
@@ -326,6 +329,6 @@
         private System.Windows.Forms.Button btnHinhAnh;
         private System.Windows.Forms.PictureBox picHinhAnh;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnHuy;
     }
 }
