@@ -69,7 +69,7 @@
             // txtTieuDe
             // 
             this.txtTieuDe.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtTieuDe.Location = new System.Drawing.Point(126, 53);
+            this.txtTieuDe.Location = new System.Drawing.Point(129, 53);
             this.txtTieuDe.Multiline = true;
             this.txtTieuDe.Name = "txtTieuDe";
             this.txtTieuDe.Size = new System.Drawing.Size(197, 22);
@@ -89,7 +89,7 @@
             // 
             this.cbbBCC.Font = new System.Drawing.Font("Tahoma", 9F);
             this.cbbBCC.FormattingEnabled = true;
-            this.cbbBCC.Location = new System.Drawing.Point(126, 16);
+            this.cbbBCC.Location = new System.Drawing.Point(129, 16);
             this.cbbBCC.Name = "cbbBCC";
             this.cbbBCC.Size = new System.Drawing.Size(197, 26);
             this.cbbBCC.TabIndex = 36;
@@ -100,7 +100,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 9F);
             this.label7.Location = new System.Drawing.Point(3, 18);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(148, 23);
+            this.label7.Size = new System.Drawing.Size(118, 18);
             this.label7.TabIndex = 35;
             this.label7.Text = "Bảng chấm công";
             // 
@@ -108,7 +108,7 @@
             // 
             this.dtpDenNgay.Font = new System.Drawing.Font("Tahoma", 9F);
             this.dtpDenNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDenNgay.Location = new System.Drawing.Point(419, 50);
+            this.dtpDenNgay.Location = new System.Drawing.Point(422, 50);
             this.dtpDenNgay.Name = "dtpDenNgay";
             this.dtpDenNgay.Size = new System.Drawing.Size(204, 26);
             this.dtpDenNgay.TabIndex = 34;
@@ -127,7 +127,7 @@
             // 
             this.dtpTuNgay.Font = new System.Drawing.Font("Tahoma", 9F);
             this.dtpTuNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTuNgay.Location = new System.Drawing.Point(419, 16);
+            this.dtpTuNgay.Location = new System.Drawing.Point(422, 16);
             this.dtpTuNgay.Name = "dtpTuNgay";
             this.dtpTuNgay.Size = new System.Drawing.Size(204, 26);
             this.dtpTuNgay.TabIndex = 32;
@@ -145,7 +145,7 @@
             // txtNoiDung
             // 
             this.txtNoiDung.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.txtNoiDung.Location = new System.Drawing.Point(126, 86);
+            this.txtNoiDung.Location = new System.Drawing.Point(129, 86);
             this.txtNoiDung.Multiline = true;
             this.txtNoiDung.Name = "txtNoiDung";
             this.txtNoiDung.Size = new System.Drawing.Size(497, 22);
@@ -166,7 +166,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(640, 178);
+            this.ClientSize = new System.Drawing.Size(638, 178);
             this.Controls.Add(this.txtNoiDung);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHuy);

@@ -23,6 +23,7 @@ namespace QUANLY_NHANSU
 
         private void frmManHinhChinh_Load(object sender, EventArgs e)
         {
+            this.Size = new System.Drawing.Size(900, this.Size.Height);
             _taikhoan = new BLLAccount();
             // mới vào thì mở frm đăng nhập để khi bật app lên chạy frmManHinhChinh thì nó sẽ bật frmDangNhap ghi đè lên
             var f = new frmDangNhap();
